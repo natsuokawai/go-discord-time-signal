@@ -32,12 +32,13 @@ func timeSignalMessage() string {
 	return strconv.Itoa(hour) + "時です"
 }
 
-func getGifURL(t gotenor.Tenor) string {
+func getGifURL(t *gotenor.Tenor) string {
 	data, err := t.GetRandom("cat", "", "", 3)
 	if err != nil {
 		fmt.Println(err)
 	}
-	return gotenor.GetAllGifURLs(*data)[2]
+	return gotenor.GetAllGifURLS(*data)[2]
+
 }
 
 // discord request
